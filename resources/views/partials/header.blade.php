@@ -16,7 +16,7 @@
 
                     <div class="sub-menu-item">
                         @foreach ($categories as $item)
-                            <p class=""><a href=""> {{ $item->name }} </a></p>
+                            <p class=""><a href="{{ route('front.category.product',['id'=>$item->id]) }}"> {{ $item->name }} </a></p>
                         @endforeach
                     </div>
                 </li>
@@ -71,10 +71,9 @@
                             <div class="form-group">
                                 <select class="form-control" name="type" id="type">
                                     <option value="">--Khu vực--</option>
-                                    <option>Căn hộ</option>
-                                    <option>Trung cư</option>
-                                    <option>Nhà riêng</option>
-                                    <option value="">Văn phòng</option>
+                                    @foreach ($locations as $item)
+                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </li>

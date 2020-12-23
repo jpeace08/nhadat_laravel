@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\UserController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -97,3 +98,4 @@ Route::group(['prefix'=>'/quantri','middleware'=>'loginAdmin'],function(){
 //=====================================================front end ===============================================================//
 
 Route::get('/',[PageController::class, 'index'])->name('front.home.index');
+Route::get('/category/{id}',[PageController::class,'category_product'])->name('front.category.product');
