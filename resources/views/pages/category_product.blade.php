@@ -16,20 +16,18 @@
                 @foreach ($category_pro->products as $item)
                     <div class="products _l">
                         <div class="product-item">
-                            <a href="{{ asset($item->product_image_path) }}">
-                                <img src="../assets/images/home1.jpg" alt="Product Name" class="thumb">
+                            <a href="">
+                                <img src="{{ asset($item->product_image_path) }}" alt="Product Name" class="thumb">
                             </a>
                             <div class="ml">
-                                <a title="Cho thue văn phòng hiện đại, sang trọng, đầy đủ tiện nghi" href="{{ asset($item->product_image_path) }}" class="description">Cho
+                                <a title="Cho thue văn phòng hiện đại, sang trọng, đầy đủ tiện nghi" href="" class="title-name">
                                    {{ $item->name }}</a>
                                 <div class="meta">
                                     <span class="price">{{ number_format($item->price,0,'','.') }} đ/m²/tháng</span>
                                     <span class="floor-area">118 m²</span>
                                 </div>
-                                <a href="#" class="location">Cầu Giấy, Hà Nội</a href="#">
-                                <div class="short-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero delectus deserunt
-                                    ab! Totam dolores quo recusandae a, voluptatem enim repudiandae cupiditate, quod aut eos, ratione optio
-                                    maiores error nisi labore!</div>
+                                <a href="#" class="location">{{ $item->locations->name }}</a href="#">
+                                <div class="short-content description">{{ $item->desc }}</div>
                                 <div style="display: flex;">
                                     <span class="moment">Hôm nay</span>
                                     <i class="far fa-heart"></i>

@@ -290,7 +290,7 @@ ul {
     white-space: nowrap;
     /* text-indent: 21px; */
     overflow: hidden;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     display: block;
 }
 
@@ -486,7 +486,9 @@ i.far.fa-heart {
     justify-content: space-between;
 }
 
-._l a {}
+._l a {
+    width: 30%;
+}
 
 ._l img {
     width: 100%;
@@ -643,4 +645,14 @@ h4 {
 .nav-item:hover>.sub-menu-item{
     display: block;
     /* transition: 1s all; */
+}
+.title-name{
+    color: #002468;
+    /* display: -webkit-box; */
+    text-overflow: ellipsis;
+    font-size: 1rem;
+    box-sizing: border-box;
+    font-weight: 700;
+    white-space: nowrap;
+    text-transform: uppercase;
 }
