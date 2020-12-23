@@ -59,19 +59,18 @@
                     <ul class="col-sm-7 _f">
                         <li>
                             <div class="form-group">
-                                <select  class="form-control" name="type" id="type">
-                                    <option value="">--Loại nhà đất--</option>
-                                    <option>Căn hộ</option>
-                                    <option>Trung cư</option>
-                                    <option>Nhà riêng</option>
-                                    <option value="">Văn phòng</option>
+                                <select  class="form-control" name="category_id_search" id="type">
+                                    <option value="">--Danh mục--</option>
+                                    @foreach ($categories as $item)
+                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </li>
                         <li>
                             <div class="form-group">
                                 <select class="form-control" name="type" id="type">
-                                    <option value="">--Loại nhà đất--</option>
+                                    <option value="">--Khu vực--</option>
                                     <option>Căn hộ</option>
                                     <option>Trung cư</option>
                                     <option>Nhà riêng</option>
