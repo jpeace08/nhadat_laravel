@@ -1,5 +1,10 @@
    <!-- Top navigation -->
+<?php
+// dd($categories);
 
+// dd($locations);
+
+?>
    <header class="nav-block">
     <div class="container">
         <div class="row">
@@ -8,21 +13,18 @@
                 <li class="nav-item"><a href="#">Trang chủ</a></li>
                 <li class="nav-item"><a href="#">Giới thiệu</a></li>
                 <li class="nav-item"><a href="#">Danh mục</a>
+
                     <div class="sub-menu-item">
-                        <p class=""><a href=""> Hello  </a></p>
-                        <p><a href=""> Hello  </a></p>
-                        <p><a href=""> Hello  </a></p>
-                        <p><a href=""> Hello  </a></p>
-                        <p><a href=""> Hello  </a></p>
+                        @foreach ($categories as $item)
+                            <p class=""><a href=""> {{ $item->name }} </a></p>
+                        @endforeach
                     </div>
                 </li>
                 <li class="nav-item"><a href="#">Khu vực</a>
                     <div class="sub-menu-item">
-                        <p class=""><a href=""> Hello  </a></p>
-                        <p><a href=""> Hello  </a></p>
-                        <p><a href=""> Hello  </a></p>
-                        <p><a href=""> Hello  </a></p>
-                        <p><a href=""> Hello  </a></p>
+                        @foreach ($locations as $item)
+                            <p class=""><a href=""> {{ $item->name }} </a></p>
+                        @endforeach
                     </div>
                 </li>
                 <li class="nav-item"><a href="#">Liên hệ</a></li>
