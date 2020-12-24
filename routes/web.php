@@ -98,11 +98,9 @@ Route::group(['prefix'=>'/quantri','middleware'=>'loginAdmin'],function(){
 //=====================================================front end ===============================================================//
 
 Route::get('/',[PageController::class, 'index'])->name('front.home.index');
-<<<<<<< HEAD
-Route::get('/category/{id}',[PageController::class,'category_product'])->name('front.category.product');
+
 Route::get('/products/{id}', [PageController::class, 'getCategoryProducts'])->name('front.category.products');
 
-=======
 Route::get('/danh-muc/{slug}',[PageController::class,'category_product'])->name('front.category.product');
 Route::get('/san-pham/{slug}',[PageController::class,'detail'])->name('front.product.detail');
->>>>>>> 485727774c84978a4092a4a6f50e9c4a16d520e2
+
