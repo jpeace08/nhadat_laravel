@@ -23,7 +23,7 @@
                                 <a title="Cho thue văn phòng hiện đại, sang trọng, đầy đủ tiện nghi" href="{{ route('front.product.detail',['slug'=>$item->slug])}}" class="title-name">
                                    {{ $item->name }}</a>
                                 <div class="meta">
-                                    <span class="price">{{ number_format($item->price,0,'','.') }} đ/m²/tháng</span>
+                                    <span class="price">{{$item->price }} đ/m²/tháng</span>
                                     <span class="floor-area">118 m²</span>
                                 </div>
                                 <a href="{{ route('front.product.detail',['slug'=>$item->slug])}}" class="location">{{ $item->locations->name }}</a href="#">
