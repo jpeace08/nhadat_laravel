@@ -661,6 +661,7 @@ h4 {
 .title-footer{
     font-weight: 800;
     font-size: 25px;
+<<<<<<< HEAD
     margin-bottom: 30px;
 }
 .list-unstyled li{
@@ -673,6 +674,15 @@ h4 {
 }
 .category-item-footer:hover{
     color: #da0909;
+=======
+    margin-bottom: 22px;
+}
+.category-item-footer{
+    font-weight: 600;
+}
+.category-item-footer:hover{
+    color: #f79707;
+>>>>>>> liamcole09
 }
 .page-footer{
     background: rgb(231, 219, 147);
