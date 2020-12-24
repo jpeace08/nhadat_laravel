@@ -16,7 +16,7 @@
 
                     <div class="sub-menu-item">
                         @foreach ($categories as $item)
-                            <p class=""><a href="{{ route('front.category.product',['id'=>$item->id]) }}"> {{ $item->name }} </a></p>
+                            <p class=""><a href="{{ route('front.category.product',['slug'=>$item->slug]) }}"> {{ $item->name }} </a></p>
                         @endforeach
                     </div>
                 </li>

@@ -18,8 +18,8 @@ class PageController extends Controller
 
         return view('pages.home', ['sliderImages' => $imagesSliders]);
     }
-    public function category_product($id){
-        $category_pro = Category::find($id);
+    public function category_product($slug){
+        $category_pro = Category::where('slug',$slug)->first();
         return view('pages.category_product',compact('category_pro'));
     }
 }

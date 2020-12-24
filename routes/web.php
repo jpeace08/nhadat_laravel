@@ -98,4 +98,4 @@ Route::group(['prefix'=>'/quantri','middleware'=>'loginAdmin'],function(){
 //=====================================================front end ===============================================================//
 
 Route::get('/',[PageController::class, 'index'])->name('front.home.index');
-Route::get('/category/{id}',[PageController::class,'category_product'])->name('front.category.product');
+Route::get('/category/{slug}',[PageController::class,'category_product'])->name('front.category.product');

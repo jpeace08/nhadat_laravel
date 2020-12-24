@@ -11,7 +11,7 @@
 
         <!-- Content -->
         <h5 class="text-uppercase title-footer">Thông tin liên hệ</h5>
-        <p><i class="fa fa-map-marker" aria-hidden="true"></i> Tầng 31, Keangnam Hanoi Landmark, Phạm Hùng, Ngô Quyền, Hải Phòng</p>
+        <p><i class="fa fa-map-marker" aria-hidden="true"></i> 404 Lạch tray, Ngô Quyền, Hải Phòng</p>
         <p><i class="fa fa-phone" aria-hidden="true"></i> (024) 3562 5939 - (024) 3562 5940</p>
        <p>Tầng 8, Tòa nhà Xổ số Kiến thiết (Lottery Tower), Số 77 Trần Nhân Tôn, Phường 9, Quận 5, TP. Hồ Chí Minh
         Điện thoại: 0904 893 279
@@ -34,7 +34,7 @@
         <ul class="list-unstyled">
             @foreach ($categories as $item)
             <li class="mb-2"><i class="fa fa-chevron-right" aria-hidden="true"></i>
-                <a class="category-item-footer" href="{{ route('front.category.product',['id'=>$item->id]) }}">{{ $item->name }}</a>
+                <a class="category-item-footer" href="{{ route('front.category.product',['slug'=>$item->slug]) }}">{{ $item->name }}</a>
             </li>
             @endforeach
         </ul>
@@ -51,7 +51,7 @@
         <ul class="list-unstyled">
             @foreach ($locations as $item)
             <li class="mb-2"><i class="fa fa-chevron-right" aria-hidden="true"></i>
-                <a class="category-item-footer" href="{{ route('front.category.product',['id'=>$item->id]) }}">{{ $item->name }}</a>
+                <a class="category-item-footer" href="{{ route('front.category.product',['slug'=>$item->slug]) }}">{{ $item->name }}</a>
             </li>
             @endforeach
         </ul>
