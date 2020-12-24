@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 23, 2020 lúc 04:06 PM
+-- Thời gian đã tạo: Th12 24, 2020 lúc 04:26 AM
 -- Phiên bản máy phục vụ: 10.4.17-MariaDB
--- Phiên bản PHP: 8.0.0
+-- Phiên bản PHP: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -194,7 +194,9 @@ INSERT INTO `product_images` (`id`, `image_name`, `image_path`, `product_id`, `c
 (35, 'thumbnew_1607654830_nnht - Copy.jpg', '/upload/product/ojCSan_thumbnew_1607654830_nnht - Copy.jpg', 10, '2020-12-23 01:57:11', '2020-12-23 01:57:11'),
 (37, 'thumbnew_1607654830_nnht - Copy.jpg', '/upload/product/y9iP3q_thumbnew_1607654830_nnht - Copy.jpg', 11, '2020-12-23 01:58:16', '2020-12-23 01:58:16'),
 (38, 'thumbnew_1607654830_nnht.jpg', '/upload/product/6Ggk9R_thumbnew_1607654830_nnht.jpg', 11, '2020-12-23 01:58:16', '2020-12-23 01:58:16'),
-(39, 'thumbnew_1607654830_nnht.jpg', '/upload/product/Ih5VLs_thumbnew_1607654830_nnht.jpg', 10, '2020-12-23 04:20:03', '2020-12-23 04:20:03');
+(39, 'thumbnew_1607654830_nnht.jpg', '/upload/product/Ih5VLs_thumbnew_1607654830_nnht.jpg', 10, '2020-12-23 04:20:03', '2020-12-23 04:20:03'),
+(40, 'v8D4s5_thumbnew_1607654830_nnht1.jpg', '/upload/product/6p6TVF_v8D4s5_thumbnew_1607654830_nnht1.jpg', 11, '2020-12-23 18:51:30', '2020-12-23 18:51:30'),
+(41, 'UsVmaM_thumbnew_1607654830_nnht1.jpg', '/upload/product/VIQmOw_UsVmaM_thumbnew_1607654830_nnht1.jpg', 11, '2020-12-23 19:12:21', '2020-12-23 19:12:21');
 
 -- --------------------------------------------------------
 
@@ -264,8 +266,8 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`id`, `name`, `desc`, `slider_image`, `created_at`, `updated_at`) VALUES
-(5, 'Iphone 11', 'ewre', '/upload/slider/UsVmaM_thumbnew_1607654830_nnht.jpg', '2020-12-23 00:17:15', '2020-12-23 00:17:15'),
-(7, 'ewr34324', 'ewrw34', '/upload/slider/v8D4s5_thumbnew_1607654830_nnht.jpg', '2020-12-23 01:55:27', '2020-12-23 01:55:27');
+(8, 'banner 1', 'ban1', '/upload/slider/9kYOC6_UsVmaM_thumbnew_1607654830_nnht.jpg', '2020-12-23 18:10:38', '2020-12-23 18:10:38'),
+(9, 'banner', 'bann1', '/upload/slider/7Z84V3_v8D4s5_thumbnew_1607654830_nnht.jpg', '2020-12-23 18:10:54', '2020-12-23 18:10:54');
 
 -- --------------------------------------------------------
 
@@ -402,7 +404,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT cho bảng `product_images`
 --
 ALTER TABLE `product_images`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT cho bảng `roles`
@@ -420,7 +422,7 @@ ALTER TABLE `role_users`
 -- AUTO_INCREMENT cho bảng `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `users`

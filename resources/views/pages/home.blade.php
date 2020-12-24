@@ -73,12 +73,11 @@
                     @if (isset($latestProducts))
                         @foreach ($latestProducts as $product)
                             <div class="product-item">
-                                {{-- <a href="{{route('front.product.detail', ['slug'=>$product->id]) }}"> --}}
-                                    <a href="">
+                                <a href="{{route('front.product.detail', ['slug'=>$product->slug]) }}">
                                     <img src="{{ asset($product->product_image_path) }}" alt="{{$product->name}}" class="thumb">
                                 </a>
                                 <div class="ml">
-                                    <a title="{{$product->desc}}" href="" class="description">Cho thue văn
+                                    <a title="{{$product->desc}}" href="{{route('front.product.detail', ['slug'=>$product->slug]) }}" class="description">Cho thue văn
                                         {{$product->desc}}
                                     </a>
                                     <div class="meta">

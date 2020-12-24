@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navItemEls = document.querySelectorAll('li.item');
 
     if (navItemEls && navItemEls.length > 0) {
-        navItemEls.forEach((item , index) => {
+        navItemEls.forEach((item, index) => {
             item.addEventListener('click', e => {
                 navItemEls.forEach((e, i) => {
                     e.classList.remove('active');
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slider.owlCarousel({
         items: 1,
         loop: true,
-        autoplay:true,
+        autoplay: true,
         center: true,
         margin: 10,
         URLhashListener: true,
@@ -71,8 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
 const fillData = item => {
     const newsUl = document.querySelector('.news');
     // newsUl.innerHTML = '';
-    var category_id = item.getAttribute('data-category-id');
-    var category_slug = item.getAttribute('data-category-slug');
+    if (item) {
+        var category_id = item.getAttribute('data-category-id');
+        var category_slug = item.getAttribute('data-category-slug');
+    }
 
     $.ajax({
         type: "GET",
@@ -116,7 +118,7 @@ const fillData = item => {
                             }
 
                             titleEl.innerText = dataProduct.title;
-                            momentEl.innerText = dataProduct.moment+ ' ngày trước';
+                            momentEl.innerText = dataProduct.moment + ' ngày trước';
                             imageEl.src = dataProduct.image_path;
                             titleEl.href = `san-pham/${dataProduct.id}`;
                         })
