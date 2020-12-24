@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
             <ul class="col-sm-9">
-                <li class="nav-item"><img src="{{ asset('frontend/assets/images/logosvg.svg') }}" alt="" class="logo"></li>
+                <li class="nav-item"><a href="{{ route('front.home.index') }}"><img src="{{ asset('frontend/assets/images/logosvg.svg') }}" alt="" class="logo"></a></li>
                 <li class="nav-item"><a href="{{ route('front.home.index') }}">Trang chủ</a></li>
                 <li class="nav-item"><a href="#">Giới thiệu</a></li>
                 <li class="nav-item"><a href="#">Danh mục</a>
