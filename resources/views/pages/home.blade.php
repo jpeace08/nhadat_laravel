@@ -22,17 +22,22 @@
         </section>
 
         <!--// Slider  -->
-        
         <!-- news home  -->
         <section>
             <div class="container home-center">
                 <div class="row">
                     <div class="col-sm-12">
                         <ul class="nav-sub">
-                            <li class="item active">Nổi bật</li>
-                            <li class="item">Tin tức</li>
-                            <li class="item">Tư vấn</li>
-                            <li class="item">Phong thủy</li>
+                            @if (isset($categories))
+                                @foreach ($categories as $category)
+                                    <li class="item  {{$category->id == 1 ? 'active':''}}"
+                                        data-category-id={{$category->id}}
+                                        data-category-slug={{$category->slug}}
+                                        >
+                                        {{$category->name}}
+                                    </li>
+                                @endforeach
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -46,14 +51,7 @@
                         </article>
                     </div>
                     <div class="col-sm-4">
-                        <ul class="news">
-                            <li class="item"><a href="#">Đánh giá dự án Cát Tường Pearl</a></li>
-                            <li class="item"><a href="#">Đánh giá dự án Cát Tường Pearl</a></li>
-                            <li class="item"><a href="#">Đánh giá dự án Cát Tường Pearl</a></li>
-                            <li class="item"><a href="#">Đánh giá dự án Cát Tường Pearl</a></li>
-                            <li class="item"><a href="#">Đánh giá dự án Cát Tường Pearl</a></li>
-                            <li class="item"><a href="#">Đánh giá dự án Cát Tường Pearl</a></li>
-                        </ul>
+                        <ul class="news"></ul>
                     </div>
                     <div class="col-sm-3">
                         <a href="#" class="ads"><img src="{{ asset('frontend/assets/images/home1.jpg') }}" alt="" class="ads_thumb"></a>
@@ -67,102 +65,34 @@
             <div class="container products-container">
 
                 <div class="row">
-                    <h2 class="col-sm-12">Bất động sản dành cho bạn</h2>
+                    <h2 class="col-sm-12 mt-3">Bất động sản dành cho bạn</h2>
 
                 </div>
 
                 <div class="products">
-                    <div class="product-item">
-                        <a href="{{ asset('frontend/pages/detail.html') }}">
-                            <img src="{{ asset('frontend/assets/images/home1.jpg') }}" alt="Product Name" class="thumb">
-                        </a>
-                        <div class="ml">
-                            <a title="Cho thue văn phòng hiện đại, sang trọng, đầy đủ tiện nghi" href="" class="description">Cho thue văn
-                                phòng hiện đại, sang trọng, đầy đủ tiện nghi Cho thue văn phòng hiện đại, sang trọng, đầy đủ tiện nghi</a>
-                            <div class="meta">
-                                <span class="price">230 nghìn/m²/tháng</span>
-                                <span class="floor-area">118 m²</span>
+                    @if (isset($latestProducts))
+                        @foreach ($latestProducts as $product)
+                            <div class="product-item">
+                                <a href="{{route('front.product.detail', ['slug'=>$product->slug]) }}">
+                                    <img src="{{ asset($product->product_image_path) }}" alt="{{$product->name}}" class="thumb">
+                                </a>
+                                <div class="ml">
+                                    <a title="{{$product->desc}}" href="{{route('front.product.detail', ['slug'=>$product->slug]) }}" class="description">Cho thue văn
+                                        {{$product->desc}}
+                                    </a>
+                                    <div class="meta">
+                                        <span class="price">{{number_format($product->price, 0,',', '.')}} nghìn/m²/tháng</span>
+                                        <span class="floor-area">{{$product->floor_area}} m²</span>
+                                    </div>
+                                    <a href="#" class="location">{{$product->locations->name}}</a href="#">
+                                    <div style="display: flex;">
+                                        <span class="moment">{{date_format(date_create($product->created_at), 'd-M-yy')}}</span>
+                                        <i class="far fa-heart"></i>
+                                    </div>
+                                </div>
                             </div>
-                            <a href="#" class="location">Cầu Giấy, Hà Nội</a href="#">
-                            <div style="display: flex;">
-                                <span class="moment">Hôm nay</span>
-                                <i class="far fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="product-item">
-                        <a href="{{ asset('frontend/pages/detail.html') }}">
-                            <img src="{{ asset('frontend/assets/images/home1.jpg') }}" alt="Product Name" class="thumb">
-                        </a>
-                        <div class="ml">
-                            <a title="Cho thue văn phòng hiện đại, sang trọng, đầy đủ tiện nghi" href="" class="description">Cho thue văn
-                                phòng hiện đại, sang trọng, đầy đủ tiện nghi Cho thue văn phòng hiện đại, sang trọng, đầy đủ tiện nghi</a>
-                            <div class="meta">
-                                <span class="price">230 nghìn/m²/tháng</span>
-                                <span class="floor-area">118 m²</span>
-                            </div>
-                            <a href="#" class="location">Cầu Giấy, Hà Nội</a href="#">
-                            <div style="display: flex;">
-                                <span class="moment">Hôm nay</span>
-                                <i class="far fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-item">
-                        <a href="{{ asset('frontend/pages/detail.html') }}">
-                            <img src="{{ asset('frontend/assets/images/home1.jpg') }}" alt="Product Name" class="thumb">
-                        </a>
-                        <div class="ml">
-                            <a title="Cho thue văn phòng hiện đại, sang trọng, đầy đủ tiện nghi" href="" class="description">Cho thue văn
-                                phòng hiện đại, sang trọng, đầy đủ tiện nghi Cho thue văn phòng hiện đại, sang trọng, đầy đủ tiện nghi</a>
-                            <div class="meta">
-                                <span class="price">230 nghìn/m²/tháng</span>
-                                <span class="floor-area">118 m²</span>
-                            </div>
-                            <a href="#" class="location">Cầu Giấy, Hà Nội</a href="#">
-                            <div style="display: flex;">
-                                <span class="moment">Hôm nay</span>
-                                <i class="far fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-item">
-                        <a href="{{ asset('frontend/pages/detail.html') }}">
-                            <img src="{{ asset('frontend/assets/images/home1.jpg') }}" alt="Product Name" class="thumb">
-                        </a>
-                        <div class="ml">
-                            <a title="Cho thue văn phòng hiện đại, sang trọng, đầy đủ tiện nghi" href="" class="description">Cho thue văn
-                                phòng hiện đại, sang trọng, đầy đủ tiện nghi Cho thue văn phòng hiện đại, sang trọng, đầy đủ tiện nghi</a>
-                            <div class="meta">
-                                <span class="price">230 nghìn/m²/tháng</span>
-                                <span class="floor-area">118 m²</span>
-                            </div>
-                            <a href="#" class="location">Cầu Giấy, Hà Nội</a href="#">
-                            <div style="display: flex;">
-                                <span class="moment">Hôm nay</span>
-                                <i class="far fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-item">
-                        <a href="{{ asset('frontend/pages/detail.html') }}">
-                            <img src="{{ asset('frontend/assets/images/home1.jpg') }}" alt="Product Name" class="thumb">
-                        </a>
-                        <div class="ml">
-                            <a title="Cho thue văn phòng hiện đại, sang trọng, đầy đủ tiện nghi" href="" class="description">Cho thue văn
-                                phòng hiện đại, sang trọng, đầy đủ tiện nghi Cho thue văn phòng hiện đại, sang trọng, đầy đủ tiện nghi</a>
-                            <div class="meta">
-                                <span class="price">230 nghìn/m²/tháng</span>
-                                <span class="floor-area">118 m²</span>
-                            </div>
-                            <a href="#" class="location">Cầu Giấy, Hà Nội</a href="#">
-                            <div style="display: flex;">
-                                <span class="moment">Hôm nay</span>
-                                <i class="far fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
+                    @endif
                 </div>
 
             </div>

@@ -185,13 +185,14 @@ ul {
 }
 
 .home-center .nav-sub li {
-    padding: 7px 3px;
+    padding: 7px 10px;
     text-decoration: none;
     list-style: none;
-    width: 13%;
-    font-size: 1.5rem;
+    width: auto;
+    font-size: 1.3rem;
     height: 100%;
     cursor: pointer;
+    font-weight: 600;
     border-radius: 2px;
 }
 
@@ -223,6 +224,7 @@ ul {
 }
 
 .news .item {
+    cursor: pointer;
     width: 100%;
     padding-bottom: 20px;
     margin-bottom: 20px;
@@ -292,8 +294,12 @@ ul {
     overflow: hidden;
     /* text-transform: uppercase; */
     display: block;
+    font-size: 20px;
 }
+.description:hover{
+    color:#c14b4b;
 
+}
 .moment {
     display: block;
     color: #7a7a7a;
@@ -657,18 +663,31 @@ h4 {
     font-weight: 700;
     white-space: nowrap;
     text-transform: uppercase;
+    font-size: 20px;
+}
+.title-name:hover{
+    color: #9e1f1f;
 }
 .title-footer{
     font-weight: 800;
     font-size: 25px;
-    margin-bottom: 22px;
+
+    margin-bottom: 30px;
+}
+.list-unstyled li{
+    color:#643434;
+
 }
 .category-item-footer{
     font-weight: 600;
+    color:#643434;
 }
 .category-item-footer:hover{
-    color: #f79707;
+    color: #da0909;
+
+    margin-bottom: 22px;
 }
+
 .page-footer{
     background: rgb(231, 219, 147);
 }
@@ -676,6 +695,7 @@ h4 {
     background: #1f1313;
     color: #fff;
 }
+
 h4.title-car{
     font-weight: 700;
     font-size: 25px;
