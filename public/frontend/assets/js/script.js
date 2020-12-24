@@ -68,11 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
         startPosition: '#one'
     });
 });
-<<<<<<< HEAD
-
 const fillData = item => {
     const newsUl = document.querySelector('.news');
-    newsUl.innerHTML = '';
+    // newsUl.innerHTML = '';
     var category_id = item.getAttribute('data-category-id');
     var category_slug = item.getAttribute('data-category-slug');
 
@@ -134,5 +132,3 @@ const fillData = item => {
     });
 
 }
-=======
->>>>>>> 485727774c84978a4092a4a6f50e9c4a16d520e2
