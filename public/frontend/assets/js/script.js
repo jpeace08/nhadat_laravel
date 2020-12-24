@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     //hover product effect:
-    $('.product-item').mouseover(function () { 
+    $('.product-item').mouseover(function () {
         $(this).addClass('shadow')
     });
-    $('.product-item').mouseleave(function () { 
+    $('.product-item').mouseleave(function () {
         $(this).removeClass('shadow')
     });
 
@@ -53,7 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const slider = $('.product-owl');
     slider.owlCarousel({
         items: 1,
-        loop: false,
+        loop: true,
+        autoplay:true,
         center: true,
         margin: 10,
         URLhashListener: true,
