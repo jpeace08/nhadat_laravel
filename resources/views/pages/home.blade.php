@@ -11,12 +11,11 @@
             <div class="slider-block">
                 <div class="container">
                     <div class="owl-carousel home-owl">
-                        <img src="{{ asset('frontend/assets/images/home.jpg') }}" alt="" data-hash="">
-                        <img src="{{ asset('frontend/assets/images/home.jpg') }}" alt="" data-hash="">
-                        <img src="{{ asset('frontend/assets/images/home.jpg') }}" alt="" data-hash="">
-                        <img src="{{ asset('frontend/assets/images/home.jpg') }}" alt="" data-hash="">
-                        <img src="{{ asset('frontend/assets/images/home.jpg') }}" alt="" data-hash="">
-                        <img src="{{ asset('frontend/assets/images/home.jpg') }}" alt="" data-hash="">
+                        @if (isset($sliderImages))
+                            @foreach ($sliderImages as $image)
+                                <img src="{{ asset($image->slider_image) }}" alt="{{$image->desc}}" data-hash="">
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>
