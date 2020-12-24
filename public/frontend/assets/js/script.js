@@ -9,9 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     e.classList.remove('active');
                 })
                 item.classList.add('active');
+
+                //call ajax
+                fillData(item);
             })
         })
     }
+
+    fillData(navItemEls[0]);
+
 
     //hover product effect:
     $('.product-item').mouseover(function () { 
@@ -61,3 +67,62 @@ document.addEventListener('DOMContentLoaded', () => {
         startPosition: '#one'
     });
 });
+
+const fillData = item => {
+    const newsUl = document.querySelector('.news');
+    newsUl.innerHTML = '';
+    var category_id = item.getAttribute('data-category-id');
+    var category_slug = item.getAttribute('data-category-slug');
+
+    const imageEl = document.querySelector('.detail-new .thumb');
+    const titleEl = document.querySelector('.detail-new .title');
+    const momentEl = document.querySelector('.detail-new .moment');
+    $.ajax({
+        type: "GET",
+        url: `/products/${category_id}`,
+        dataType: "json",
+        success: function (response) {
+
+            if (response.data && response.data.length > 0) {
+                var html = [];
+                const now = new Date();
+                response.data.forEach(product => {
+                    const created = new Date(product.created_at);
+                    const moment = (now - created);
+                    console.log(moment);
+                    html.push(`<li class="item"
+                             data-product-id=${product.id} 
+                             data-product-name=${product.name}
+                             data-product-createdat=${Math.floor((now - created) / 1000 / 3600 / 24)}
+                             data-product-image-path=${product.product_image_path}
+                            >${product.name}
+                            </li > `);
+                });
+                if (html.length > 0) {
+                    html = html.join('');
+                    if (newsUl) {
+                        newsUl.innerHTML = html;
+                    }
+                }
+                const liItemEls = document.querySelectorAll('.news .item');
+                if (liItemEls && liItemEls.length > 0) {
+                    liItemEls.forEach(item => {
+                        item.addEventListener('click', e => {
+                            const dataProduct = {
+                                id: item.getAttribute('data-product-id'),
+                                title: item.getAttribute('data-product-name'),
+                                image_path: item.getAttribute('data-product-image-path'),
+                                moment: item.getAttribute('data-product-createdat'),
+                            }
+
+                            titleEl.innerText = dataProduct.title;
+                            momentEl.innerText = dataProduct.moment+ ' ngày trước';
+                            imageEl.src = dataProduct.image_path;
+                        })
+                    })
+                }
+            }
+        }
+    });
+
+}
