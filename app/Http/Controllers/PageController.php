@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 <<<<<<< HEAD
-<<<<<<< HEAD
+
 use App\Models\Slider;
 =======
 use App\Models\Category;
