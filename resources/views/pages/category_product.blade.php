@@ -8,7 +8,7 @@
         <div class="container mx-auto products-container">
 
             <div class="row">
-                <h4 class="col-sm-12">Category Name</h4>
+                <h4 class="col-sm-12 title-car">{{ $category_pro->name }}</h4>
 
             </div>
             <div class="row">
