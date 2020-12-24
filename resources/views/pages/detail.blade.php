@@ -99,7 +99,7 @@
                             {{ $item->desc }}
                         </a>
                         <div class="meta">
-                            <span class="price">{{ $item->price }} nghìn/m²/tháng</span>
+                            <span class="price">{{ $item->price }}</span>
                             <span class="floor-area">{{ $item->floor_area }}m²</span>
                         </div>
                         <a href="#" class="location">Cầu Giấy, Hà Nội</a href="#">
@@ -110,7 +110,6 @@
                     </div>
                 </div>
                 @endforeach
-
 
             </div>
         </div>
