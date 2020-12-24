@@ -30,4 +30,6 @@ class PageController extends Controller
 
         return view('pages.detail',compact('product','related_products'));
     }
-}
+
+   }
+
