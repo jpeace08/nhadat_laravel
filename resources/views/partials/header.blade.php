@@ -1,5 +1,10 @@
    <!-- Top navigation -->
+<?php
+// dd($categories);
 
+// dd($locations);
+
+?>
    <header class="nav-block">
     <div class="container">
         <div class="row">
@@ -8,21 +13,18 @@
                 <li class="nav-item"><a href="#">Trang chủ</a></li>
                 <li class="nav-item"><a href="#">Giới thiệu</a></li>
                 <li class="nav-item"><a href="#">Danh mục</a>
+
                     <div class="sub-menu-item">
-                        <p class=""><a href=""> Hello  </a></p>
-                        <p><a href=""> Hello  </a></p>
-                        <p><a href=""> Hello  </a></p>
-                        <p><a href=""> Hello  </a></p>
-                        <p><a href=""> Hello  </a></p>
+                        @foreach ($categories as $item)
+                            <p class=""><a href="{{ route('front.category.product',['id'=>$item->id]) }}"> {{ $item->name }} </a></p>
+                        @endforeach
                     </div>
                 </li>
                 <li class="nav-item"><a href="#">Khu vực</a>
                     <div class="sub-menu-item">
-                        <p class=""><a href=""> Hello  </a></p>
-                        <p><a href=""> Hello  </a></p>
-                        <p><a href=""> Hello  </a></p>
-                        <p><a href=""> Hello  </a></p>
-                        <p><a href=""> Hello  </a></p>
+                        @foreach ($locations as $item)
+                            <p class=""><a href=""> {{ $item->name }} </a></p>
+                        @endforeach
                     </div>
                 </li>
                 <li class="nav-item"><a href="#">Liên hệ</a></li>
@@ -57,23 +59,21 @@
                     <ul class="col-sm-7 _f">
                         <li>
                             <div class="form-group">
-                                <select  class="form-control" name="type" id="type">
-                                    <option value="">--Loại nhà đất--</option>
-                                    <option>Căn hộ</option>
-                                    <option>Trung cư</option>
-                                    <option>Nhà riêng</option>
-                                    <option value="">Văn phòng</option>
+                                <select  class="form-control" name="category_id_search" id="type">
+                                    <option value="">--Danh mục--</option>
+                                    @foreach ($categories as $item)
+                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </li>
                         <li>
                             <div class="form-group">
                                 <select class="form-control" name="type" id="type">
-                                    <option value="">--Loại nhà đất--</option>
-                                    <option>Căn hộ</option>
-                                    <option>Trung cư</option>
-                                    <option>Nhà riêng</option>
-                                    <option value="">Văn phòng</option>
+                                    <option value="">--Khu vực--</option>
+                                    @foreach ($locations as $item)
+                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </li>
