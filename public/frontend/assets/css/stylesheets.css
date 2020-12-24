@@ -656,3 +656,21 @@ h4 {
     white-space: nowrap;
     text-transform: uppercase;
 }
+.title-footer{
+    font-weight: 800;
+    font-size: 25px;
+    margin-bottom: 22px;
+}
+.category-item-footer{
+    font-weight: 600;
+}
+.category-item-footer:hover{
+    color: #f79707;
+}
+.page-footer{
+    background: rgb(231, 219, 147);
+}
+.footer-copyright{
+    background: #1f1313;
+    color: #fff;
+}

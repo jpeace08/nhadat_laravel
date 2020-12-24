@@ -22,5 +22,4 @@ class PageController extends Controller
         $category_pro = Category::find($id);
         return view('pages.category_product',compact('category_pro'));
     }
-
 }
