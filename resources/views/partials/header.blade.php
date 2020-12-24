@@ -54,6 +54,9 @@
                         </li>
                         <li>
                             <input type="text" class="search-box form-control" placeholder="Tìm kiếm địa điểm, khu vực">
+                            <ul class="prevRes hide">
+                                
+                            </ul>
                         </li>
                     </ul>
                     <ul class="col-sm-7 _f">

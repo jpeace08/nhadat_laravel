@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Slider;
 
 use App\Models\Category;
+use App\Models\Location;
 use App\Models\Product;
 
 use Illuminate\Http\Request;
@@ -39,4 +40,16 @@ class PageController extends Controller
         return json_encode($posts);
     }
 
+    public function getProductsByLocation(Request $request){
+        $location = Location::where('name','like','%'.$request->location.'%')->get()[0];
+        if($location) {
+            $products = Product::where([
+                'location_id' => $location->id,
+            ])->get();
+            if ($products && count($products)) {
+                return json_encode($products);
+            }
+        }
+        return json_encode(false);
+    }
 }

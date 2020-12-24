@@ -1,6 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': document.querySelector('._token').getAttribute('content'),
+        }
+    });   
+
     const navItemEls = document.querySelectorAll('li.item');
+    const prevResEl = document.querySelector('.prevRes');
+    let location = null;
 
     if (navItemEls && navItemEls.length > 0) {
         navItemEls.forEach((item, index) => {
@@ -15,6 +23,22 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         })
     }
+
+    //search
+    const searchBox = document.querySelector('input[type]');
+    searchBox.addEventListener('input', e => {
+        location = e.target.value;
+    });
+
+    searchBox.addEventListener('keyup', e => {
+        if (e.keyCode === 13) {
+            getProducts(location, prevResEl);
+        }
+    })
+
+    // searchBox.addEventListener('mouseout', e => {
+    //     getProducts(location, prevResEl);
+    // })
 
     fillData(navItemEls[0]);
 
@@ -135,4 +159,39 @@ const fillData = item => {
         }
     });
 
+}
+
+const getProducts = (filter, viewContainer) => {
+
+    $.ajax({
+        type: "POST",
+        url: `/products/location`,
+        data: {
+            location: filter,
+        },
+        dataType: "json",
+        success: function (response) {
+            if (response.length > 0) {
+                viewContainer.innerHTML = '';
+                let html = [];
+
+                response.forEach(product => {
+                    html.push(`<li class="product-item">
+                                    <div class="ml">
+                                        <a title="${product.name}" href="/san-pham/${product.slug}" class="title-name">
+                                            ${product.name}</a>
+                                        <div class="meta">
+                                            <span class="price">${product.price} đ/m²/tháng</span>
+                                            <span class="floor-area">${product.floor_area} m²</span>
+                                        </div>
+                                    </div>
+                                </li>`);
+                });
+                html = html.join('');
+                viewContainer.innerHTML = html;
+
+                viewContainer.classList.remove('hide');
+            }
+        }
+    });
 }
