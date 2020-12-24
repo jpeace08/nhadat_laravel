@@ -20,10 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     //hover product effect:
-    $('.product-item').mouseover(function () { 
+    $('.product-item').mouseover(function () {
         $(this).addClass('shadow')
     });
-    $('.product-item').mouseleave(function () { 
+    $('.product-item').mouseleave(function () {
         $(this).removeClass('shadow')
     });
 
@@ -59,7 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const slider = $('.product-owl');
     slider.owlCarousel({
         items: 1,
-        loop: false,
+        loop: true,
+        autoplay:true,
         center: true,
         margin: 10,
         URLhashListener: true,
@@ -67,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startPosition: '#one'
     });
 });
+<<<<<<< HEAD
 
 const fillData = item => {
     const newsUl = document.querySelector('.news');
@@ -132,3 +134,5 @@ const fillData = item => {
     });
 
 }
+=======
+>>>>>>> 485727774c84978a4092a4a6f50e9c4a16d520e2
