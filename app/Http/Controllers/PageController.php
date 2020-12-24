@@ -13,8 +13,9 @@ class PageController extends Controller
     public function index(){
 
         $imagesSliders = Slider::all();
+        $latestProducts = Product::latest()->limit(8)->get();
 
-        return view('pages.home', ['sliderImages' => $imagesSliders]);
+        return view('pages.home', ['sliderImages' => $imagesSliders, 'latestProducts' => $latestProducts]);
     }
     public function category_product($id){
         $category_pro = Category::find($id);
