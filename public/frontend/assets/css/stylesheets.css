@@ -745,7 +745,7 @@ li.resItem {
     margin: 0 0 6px;
 }
 
-img.thumb{
+.ml img.thumb{
         display: block;
         max-height: 144px;
 }
