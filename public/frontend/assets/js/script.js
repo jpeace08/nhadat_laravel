@@ -90,6 +90,7 @@ const fillData = item => {
                     html.push(`<li class="item"
                              data-product-id=${product.id} 
                              data-product-name="${product.name}"
+                             data-product-slug="${product.slug}"
                              data-product-createdat=${Math.floor((now - created) / 1000 / 3600 / 24)}
                              data-product-image-path=${product.product_image_path}
                             >${product.name}
@@ -112,6 +113,7 @@ const fillData = item => {
                         item.addEventListener('click', e => {
                             let dataProduct = {
                                 id: item.getAttribute('data-product-id'),
+                                slug: item.getAttribute('data-product-slug'),
                                 title: item.getAttribute('data-product-name'),
                                 image_path: item.getAttribute('data-product-image-path'),
                                 moment: item.getAttribute('data-product-createdat'),
@@ -120,14 +122,14 @@ const fillData = item => {
                             titleEl.innerText = dataProduct.title;
                             momentEl.innerText = dataProduct.moment + ' ngày trước';
                             imageEl.src = dataProduct.image_path;
-                            titleEl.href = `san-pham/${dataProduct.id}`;
+                            titleEl.href = `san-pham/${dataProduct.slug}`;
                         })
                     })
                     //set default:
                     imageEl.src = liItemEls[0].getAttribute('data-product-image-path');
                     momentEl.innerText = liItemEls[0].getAttribute('data-product-createdat');
                     titleEl.innerText = liItemEls[0].getAttribute('data-product-name');
-                    titleEl.href = `san-pham/${liItemEls[0].getAttribute('data-product-id')}`;
+                    titleEl.href = `san-pham/${liItemEls[0].getAttribute('data-product-slug')}`;
                 }
             }
         }

@@ -23,7 +23,7 @@
                 <li class="nav-item"><a href="#">Khu vực</a>
                     <div class="sub-menu-item">
                         @foreach ($locations as $item)
-                            <p class=""><a href=""> {{ $item->name }} </a></p>
+                            <p class=""><a href="{{ route('front.location.product',['slug'=>$item->slug]) }}"> {{ $item->name }} </a></p>
                         @endforeach
                     </div>
                 </li>
