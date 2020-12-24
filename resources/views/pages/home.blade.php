@@ -23,6 +23,8 @@
 
         <!--// Slider  -->
 
+        {{dd($categories)}}
+
         <!-- news home  -->
         <section>
             <div class="container home-center">
