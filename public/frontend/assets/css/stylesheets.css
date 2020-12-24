@@ -744,3 +744,8 @@ li.resItem {
     height: auto;
     margin: 0 0 6px;
 }
+
+img.thumb{
+        display: block;
+        max-height: 144px;
+}
