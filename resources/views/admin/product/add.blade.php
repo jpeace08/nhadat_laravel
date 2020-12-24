@@ -67,7 +67,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Giá bán</label>
-                                <input type="number" name = "price" class="form-control @error('price') is-invalid @enderror" id="exampleInputEmail1"
+                                <input type="text" name = "price" class="form-control @error('price') is-invalid @enderror" id="exampleInputEmail1"
                                        aria-describedby="" placeholder="Nhập giá bán"
                                        value="{{old('price')}}"
                                 >

@@ -1,6 +1,6 @@
 @extends('layouts.index')
 @section('title')
-    <title>Danh mục</title>
+    <title>Khu vực</title>
 @endsection
 @section('content')
 
@@ -8,12 +8,12 @@
         <div class="container mx-auto products-container">
 
             <div class="row">
-                <h4 class="col-sm-12 title-car">{{ $category_pro->name }}</h4>
+                <h4 class="col-sm-12 title-car">{{ $location_pro->name }}</h4>
 
             </div>
             <div class="row">
                 <div class="col-sm-9">
-                @foreach ($category_pro->products as $item)
+                @foreach ($location_pro->products as $item)
                     <div class="products _l">
                         <div class="product-item">
                             <a href="{{ route('front.product.detail',['slug'=>$item->slug])}}">
@@ -23,7 +23,7 @@
                                 <a title="Cho thue văn phòng hiện đại, sang trọng, đầy đủ tiện nghi" href="{{ route('front.product.detail',['slug'=>$item->slug])}}" class="title-name">
                                    {{ $item->name }}</a>
                                 <div class="meta">
-                                    <span class="price">{{$item->price }} đ/m²/tháng</span>
+                                    <span class="price">{{ $item->price }} </span>
                                     <span class="floor-area">118 m²</span>
                                 </div>
                                 <a href="{{ route('front.product.detail',['slug'=>$item->slug])}}" class="location">{{ $item->locations->name }}</a href="#">

@@ -57,7 +57,7 @@ Route::group(['prefix'=>'/quantri','middleware'=>'loginAdmin'],function(){
     Route::prefix('/products')->group(function(){
         Route::get('/', [ProductController::class, 'index'])->name('products.index');
         Route::get('/create', [ProductController::class, 'create'])->name('products.create');
-        Route::post('/store', [ProductController::class, 'store'])->name('products. ');
+        Route::post('/store', [ProductController::class, 'store'])->name('products.store');
         Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('products.edit');
         Route::post('/update/{id}', [ProductController::class, 'update'])->name('products.update');
         Route::get('/delete/{id}', [ProductController::class, 'delete'])->name('products.delete');
@@ -105,3 +105,4 @@ Route::post('/products/location', [PageController::class, 'getProductsByLocation
 Route::get('/danh-muc/{slug}',[PageController::class,'category_product'])->name('front.category.product');
 Route::get('/san-pham/{slug}',[PageController::class,'detail'])->name('front.product.detail');
 
+Route::get('/khu-vuc/{slug}',[PageController::class,'location_product'])->name('front.location.product');

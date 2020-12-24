@@ -62,7 +62,7 @@
                                 <tr>
                                     <th scope="row">{{$item->id}}</th>
                                     <td style="max-width: 300px;">{{ $item->name }}</td>
-                                    <td>{{ number_format($item->price , 0,'',',')}} đ</td>
+                                    <td>{{ $item->price}} đồng</td>
                                     <td> {{ $item->floor_area  }}</td>
                                     <td>
                                         <img class="img-pro" src="{{asset($item->product_image_path)}}" alt="image">

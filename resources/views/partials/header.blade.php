@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
             <ul class="col-sm-9">
-                <li class="nav-item"><img src="{{ asset('frontend/assets/images/logosvg.svg') }}" alt="" class="logo"></li>
+                <li class="nav-item"><a href="{{ route('front.home.index') }}"><img src="{{ asset('frontend/assets/images/logosvg.svg') }}" alt="" class="logo"></a></li>
                 <li class="nav-item"><a href="{{ route('front.home.index') }}">Trang chủ</a></li>
                 <li class="nav-item"><a href="#">Giới thiệu</a></li>
                 <li class="nav-item"><a href="#">Danh mục</a>
@@ -23,7 +23,7 @@
                 <li class="nav-item"><a href="#">Khu vực</a>
                     <div class="sub-menu-item">
                         @foreach ($locations as $item)
-                            <p class=""><a href=""> {{ $item->name }} </a></p>
+                            <p class=""><a href="{{ route('front.location.product',['slug'=>$item->slug]) }}"> {{ $item->name }} </a></p>
                         @endforeach
                     </div>
                 </li>

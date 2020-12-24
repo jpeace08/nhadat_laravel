@@ -24,8 +24,13 @@ class PageController extends Controller
         $category_pro = Category::where('slug',$slug)->first();
         return view('pages.category_product',compact('category_pro'));
     }
-    public function detail($slug){
 
+    public function location_product($slug){
+        $location_pro = Location::where('slug',$slug)->first();
+        return view('pages.location_product',compact('location_pro'));
+    }
+
+    public function detail($slug){
         $product = Product::where('slug',$slug)->first();
         $cate_products= $product->categories->first();
         $related_products = $cate_products->products->take(6);
@@ -53,3 +58,4 @@ class PageController extends Controller
         return json_encode(false);
     }
 }
+

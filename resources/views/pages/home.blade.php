@@ -30,11 +30,11 @@
                         <ul class="nav-sub">
                             @if (isset($categories))
                                 @foreach ($categories as $category)
-                                    <li class="item  {{$category->id == 1 ? 'active':''}}" 
+                                    <li class="item  {{$category->id == 1 ? 'active':''}}"
                                         data-category-id={{$category->id}}
                                         data-category-slug={{$category->slug}}
                                         >
-                                        {{$category->name}} 
+                                        {{$category->name}}
                                     </li>
                                 @endforeach
                             @endif
@@ -65,8 +65,7 @@
             <div class="container products-container">
 
                 <div class="row">
-                    <h2 class="col-sm-12">Bất động sản dành cho bạn</h2>
-
+                    <h2 class="col-sm-12 mt-3">Bất động sản dành cho bạn</h2>
                 </div>
 
                 <div class="products">
@@ -81,7 +80,7 @@
                                         {{$product->desc}}
                                     </a>
                                     <div class="meta">
-                                        <span class="price">{{number_format($product->price, 0,',', '.')}} nghìn/m²/tháng</span>
+                                        <span class="price">{{$product->price}}</span>
                                         <span class="floor-area">{{$product->floor_area}} m²</span>
                                     </div>
                                     <a href="#" class="location">{{$product->locations->name}}</a href="#">

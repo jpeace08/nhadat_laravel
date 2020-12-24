@@ -293,8 +293,12 @@ ul {
     overflow: hidden;
     /* text-transform: uppercase; */
     display: block;
+    font-size: 20px;
 }
+.description:hover{
+    color:#c14b4b;
 
+}
 .moment {
     display: block;
     color: #7a7a7a;
@@ -657,13 +661,20 @@ h4 {
 
 .title-name {
     color: #002468;
-    /* display: -webkit-box; */
+    width: 100% !important;
+    width: 100%;
+    display: block;
     text-overflow: ellipsis;
     font-size: 1rem;
     box-sizing: border-box;
     font-weight: 700;
     white-space: nowrap;
     text-transform: uppercase;
+    font-size: 20px;
+    overflow: hidden;
+}
+.title-name:hover{
+    color: #9e1f1f;
 }
 
 .title-footer {
